@@ -8,13 +8,10 @@
   "dependencies": {
     "body-parser": "~1.15.1",
     "compression": "^1.6.2",
-    "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
-    "ejs": "~2.4.1",
     "express": "~4.13.4",
     "ip2location-nodejs": "^8.0.0",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
     "winston": "^2.2.0"
   }
 }
