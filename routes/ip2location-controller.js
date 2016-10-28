@@ -9,16 +9,16 @@ router.get('/', function(req, res, next) {
     let geoLocation;
     if (queriedData !== null) {
         geoLocation = {
-            IPAddress: req.query.ipaddress,
-            City: queriedData.city,
-            Country: queriedData.country_long,
-            Latitude: queriedData.latitude,
-            Longitude: queriedData.longitude
+            ipaddress: req.query.ipaddress,
+            city: queriedData.city,
+            country: queriedData.country_long,
+            latitude: queriedData.latitude,
+            longitude: queriedData.longitude
         };
     }
     else {
         geoLocation = {
-            ErrorMessage: 'Geo location not found'
+            error_message: 'Geolocation not found'
         };
     }
 
