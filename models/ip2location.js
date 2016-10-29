@@ -19,7 +19,7 @@ class IP2Location {
 
         if (net.isIPv4(ip)) {
             if (!this.isIPv4DBInitialized) {
-                const databasePath = path.join(__dirname, `../databases/${config.ipv4db}`);
+                const databasePath = path.join(__dirname, `../databases/ip2location/${config.ip2location_ipv4db}`);
                 ip2locationIPv4.IP2Location_init(databasePath);
 
                 logger.info('IP2Location IPv4 database initialized');
@@ -31,7 +31,7 @@ class IP2Location {
 
         if (net.isIPv6(ip)) {
             if (!this.isIPv6DBInitialized) {
-                const databasePath = path.join(__dirname, `../databases/${config.ipv6db}`);
+                const databasePath = path.join(__dirname, `../databases/ip2location/${config.ip2location_ipv6db}`);
                 ip2locationIPv4.IP2Location_init(databasePath);
 
                 logger.info('IP2Location IPv6 database initialized');
