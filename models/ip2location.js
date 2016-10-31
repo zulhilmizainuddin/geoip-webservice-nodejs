@@ -32,7 +32,7 @@ class IP2Location {
         if (net.isIPv6(ip)) {
             if (!this.isIPv6DBInitialized) {
                 const databasePath = path.join(__dirname, `../databases/ip2location/${config.ip2location_ipv6db}`);
-                ip2locationIPv4.IP2Location_init(databasePath);
+                ip2locationIPv6.IP2Location_init(databasePath);
 
                 logger.info('IP2Location IPv6 database initialized');
                 this.isIPv6DBInitialized = true;
