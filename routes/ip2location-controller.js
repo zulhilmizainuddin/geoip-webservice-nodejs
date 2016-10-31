@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
     const queriedData = ip2location.query(req.query.ipaddress);
 
     let geoLocation;
-    if (queriedData !== null) {
+    if (queriedData &&
+        queriedData.city !== '?' &&
+        queriedData.country_long !== '?' &&
+        queriedData.latitude !== '?' &&
+        queriedData.longitude !== '?') {
         geoLocation = {
             ipaddress: req.query.ipaddress,
             city: queriedData.city,
@@ -18,7 +22,7 @@ router.get('/', function(req, res, next) {
     }
     else {
         geoLocation = {
-            error_message: 'Geolocation not found'
+            error_message: `${req.query.ipaddress} is not in the database`
         };
     }
 
