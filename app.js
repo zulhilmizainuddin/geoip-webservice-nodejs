@@ -15,7 +15,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
-app.use(compression());
+if (process.env.HANDLE_COMPRESSION) {
+    app.use(compression());
+}
 
 app.use('/', queryStringValidation);
 app.use('/ip2location', ip2locationController);
