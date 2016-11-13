@@ -1,6 +1,5 @@
 'use strict';
 
-const express = require('express');
 const path = require('path');
 // const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -8,9 +7,11 @@ const logger = require('morgan');
 // const bodyParser = require('body-parser');
 const compression = require('compression');
 
-const ip2locationController = require('./routes/ip2location-controller');
-
+const express = require('express');
 const app = express();
+
+const queryStringValidation = require('./routes/query-string-validation');
+const ip2locationController = require('./routes/ip2location-controller');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +26,7 @@ app.use(logger('dev'));
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression());
 
+app.use('/', queryStringValidation);
 app.use('/ip2location', ip2locationController);
 
 // catch 404 and forward to error handler
