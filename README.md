@@ -1,4 +1,4 @@
-# geoip-webservice
+# geoip-webservice-nodejs
 RESTful service for retrieving geolocations from IP addresses using Node.js and Express framework
 
 Geolocation data provided by IP2Location LITE databases.
